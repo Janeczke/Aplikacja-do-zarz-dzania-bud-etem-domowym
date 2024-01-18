@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #f6f6f9;
+  --primary: #1976d2;
+  --light-primary: #cfe8ff;
+  --grey: #fff;
+  --dark-grey: #aaaaaa;
+  --dark: #363949;
+  --danger: #d32f2f;
+  --light-danger: #fecdd3;
+  --warning: #fbc02d;
+  --light-warning: #fff2c6;
+  --success: #388e3c;
+  --light-success: #bbf7d0;
+
+  /* New palette */
+
+  --aqua: #092635;
+  --dark-green: #1b4242;
+  --green: #5c8374;
+  --light-green: #9ec8b9;
+
+  --new4: #e1e3e7;
+  --new17: #365486;
+  --new18: #0f1035;
+  --new23: #b6bbc4;
+  --new24: #7f8289;
+}
+
+li,
+a,
+button {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--new4);
+  font-family: "poppins", sans-serif;
+}
+
+/*
+
+!!! HEADER PART !!!
+
+*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--new18);
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.cta button {
+  background-color: var(
+    --new17
+  ); /* Kolor przycisku - dostosuj według potrzeb */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta button:hover {
+  background-color: #a37c40; /* Kolor po najechaniu - dostosuj według potrzeb */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.family-container {
+  background-color: var(--new18);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 1200px;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 10px;
+  color: white;
+}
+
+input {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--new17);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#familyMembersList,
+#expensesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.family-member {
+  background-color: var(--new18);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  color: white;
+}
+
+.expense {
+  background-color: var(--new23); /* Dostosuj kolor dla expenses */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 30px;
+  width: 200px;
+  text-align: center;
+  color: white;
+}
+
+.expense input {
+  margin-top: 5px;
+}
+
+#totalCost {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+}

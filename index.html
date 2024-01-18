@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="style.css" rel="stylesheet" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script defer src="script.js"></script>
+        <title>Aplikacja zarządzająca budżetem domowym</title>
+    </head>
+    <body>
+
+        <header>
+            <a href="index.html">
+            <img class="logo" src="bb.png">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="index.html">Kalkulator</a></li>
+                    <li><a href="lista.html">Lista zakupów</a></li>
+                    <li><a href="przepisy.html">Cele oszczędnościowe</a></li>
+                    <li><a href="rodzina.html">Rodzinne oszczędzanie</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#"><button id="loginBtn">Zaloguj</button></a>
+        </header>
+
+        <div class="loginDrawer">
+            <div class="loginDrawerContent">
+                <h2>Zaloguj</h2>
+                <div class="main">  	
+                    <input type="checkbox" id="chk" aria-hidden="true">
+        
+                    <div class="login">
+                        <form class="form" id="loginForm" action="" method="post">
+                            <label for="chk" aria-hidden="true">Zaloguj</label>
+                            <input class="input" type="email" name="email_login" placeholder="Email" required="">
+                            <input class="input" type="password" name="pswd" placeholder="Password" required="">
+                            <button type="submit" id="submitLogin">Zaloguj</button>
+                        </form>
+                    </div>
+                    <div class="register">
+                        <form class="form" id="registerForm" action="register.php" method="post">
+                            <label for="chk" aria-hidden="true">Zarejestruj</label>
+                            <input class="input" type="text" name="username" placeholder="Username" required="">
+                            <input class="input" type="email" name="email" placeholder="Email" required="">
+                            <input class="input" type="password" name="password" placeholder="Password" required="">
+                            <button type="submit" id="registerBtn">Zarejestruj</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Budget&Buddy</h2>
+            <div class="error_message">
+                <p>Proszę podać kwotę | Więcej niż 0</p>
+            </div>
+            <div class="budget_content">
+                <div class="ur_budget">
+                    <form>
+                        <label for="budget">Twój budżet : </label>
+                        <input 
+                            type="number" 
+                            placeholder="Wprowadź budżet" 
+                            class="budget_input"
+                        />
+                            <button class="btn" id="btn_budget">Kalkuluj</button>
+                    </form>
+                </div>
+                <div class="ur_expenses">
+                    <form>
+                        <label for="expenses">Szczegóły wydatków: </label>
+                        <input
+                            type="text"
+                            placeholder="Wprowadź szczegóły wydatków"
+                            class="expensess_input"
+                        />
+                        <input
+                            type="number"
+                            placeholder="Wartość wydatków"
+                            class="expensess_amount"
+                        />
+                        <button class="btn" id="btn_expenses">Dodaj wydatki</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-------------Cards Start------------->
+            <ul class="cards">
+                <li>
+                    <i class="bx bx-money"></i>
+                    <span class="info">
+                        <h3><span>zł</span><span class="budget_card">0</span></h3>
+                        <p>Budżet</p>
+                    </span>
+                </li>
+                <li>
+                    <i class="bx bx-credit-card"></i>
+                    <span class="info">
+                        <h3><span>zł</span><span class="expenses_card">0</span></h3>
+                        <p>Wydatki</p>
+                    </span>
+                </li>
+                <li>
+                    <i class="bx bx-dollar"></i>
+                    <span class="info">
+                        <h3><span>zł</span><span class="balance_card">0</span></h3>
+                        <p>Saldo</p>
+                    </span>
+                </li>
+            </ul>
+            <!-------------Cards Close------------->
+
+            <!-------------Table Content Start------------->
+            <div class="tbl_content">
+                <h3>Szczegóły wydatków</h3>
+                <div class="tbl_data">
+                    <!-- <ul class="tbl_tr_content">
+                        <li>1</li>
+                        <li>Gaming Mouse</li>
+                        <li><span>$</span>600</li>
+                        <li>
+                            <button type="button" class="btn_delete">Delete</button>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+            <!-------------Table Content Close------------->
+        </div>
+    </body>
+</html>

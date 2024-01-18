@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style3.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script defer src="script.js"></script>
+    <title>Aplikacja zarządzająca budżetem domowym</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+        <img class="logo" src="bb.png">
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Kalkulator</a></li>
+                <li><a href="lista.html">Lista zakupów</a></li>
+                <li><a href="przepisy.html">Cele oszczędnościowe</a></li>
+                <li><a href="rodzina.html">Rodzinne oszczędzanie</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#"><button id="loginBtn">Zaloguj</button></a>
+    </header>
+
+    <main>
+        <div class="family-container">
+            <h2>Dodaj członka rodziny</h2>
+            <form id="familyMemberForm">
+                <label for="familyMemberName">Imię:</label>
+                <input type="text" id="familyMemberName" required />
+                <button type="button" onclick="addFamilyMember()">Dodaj członka</button>
+            </form>
+        </div>
+    
+        <div id="familyMembersList"></div>
+    
+        <div id="expensesList"></div>
+    
+        <button type="button" onclick="calculateTotalCost()">Podlicz koszty</button>
+        <p id="totalCost"></p>
+    </main>
+    
+
+</body>
+</html>

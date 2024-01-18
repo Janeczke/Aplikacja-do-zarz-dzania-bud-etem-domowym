@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #f6f6f9;
+  --primary: #1976d2;
+  --light-primary: #cfe8ff;
+  --grey: #fff;
+  --dark-grey: #aaaaaa;
+  --dark: #363949;
+  --danger: #d32f2f;
+  --light-danger: #fecdd3;
+  --warning: #fbc02d;
+  --light-warning: #fff2c6;
+  --success: #388e3c;
+  --light-success: #bbf7d0;
+
+  /* NEW NEW */
+  --new4: #e1e3e7;
+  --new17: #365486;
+  --new18: #0f1035;
+  --new23: #b6bbc4;
+  --new24: #7f8289;
+}
+
+li,
+a,
+button {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--new4);
+  font-family: "poppins", sans-serif;
+}
+
+/*
+
+!!! HEADER PART !!!
+
+*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--new18);
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.cta button {
+  background-color: var(
+    --new17
+  ); /* Kolor przycisku - dostosuj według potrzeb */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.cta button:hover {
+  background-color: #a37c40; /* Kolor po najechaniu - dostosuj według potrzeb */
+}
+
+/*
+
+!!! CALCULATOR PART !!!
+
+*/
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--new18);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px #000;
+  overflow-x: hidden;
+  margin-top: 40px;
+}
+
+.container h2 {
+  padding: 2rem 0;
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+}
+
+.error_message {
+  background-color: var(--danger);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem 0;
+  width: 650px;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: none;
+}
+
+.error_message.error {
+  display: block;
+  transition: all 0.8s ease-in;
+}
+
+.budget_content {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.ur_budget form input,
+.ur_expenses form input {
+  padding: 0.4rem 1rem;
+  width: 300px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+.ur_budget form input:focus,
+.ur_expenses form input:focus {
+  outline: none;
+}
+
+.ur_budget form,
+.ur_expenses form {
+  position: relative;
+}
+
+.budget_content .btn {
+  position: absolute;
+  right: 0;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  padding: 0.47rem 1rem;
+  color: var(--light);
+  border-top-right-radius: 3.5px;
+  border-bottom-right-radius: 3.5px;
+  cursor: pointer;
+  background-color: var(--new17);
+}
+
+.budget_content .btn:active {
+  transform: scale(0.98);
+}
+
+/*=======================Cards Start======================= */
+.container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 1.5rem;
+  padding: 2rem;
+}
+
+.container .cards li {
+  padding: 1.8rem;
+  background-color: var(--new23);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  transform: all 0.3s ease-in;
+}
+
+.container .cards li:hover {
+  transform: translateY(-10px);
+}
+
+.container .cards li .bx {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 10px;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .cards li:nth-child(1) .bx {
+  background-color: var(--light-primary);
+  color: var(--primary);
+}
+
+.container .cards li:nth-child(2) .bx {
+  background-color: var(--light-warning);
+  color: var(--warning);
+}
+
+.container .cards li:nth-child(3) .bx {
+  background-color: var(--light-success);
+  color: var(--success);
+}
+
+.container .cards li .info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.container .cards li .info p {
+  color: var(--dark);
+}
+/*=======================Cards Close======================= */
+
+/*-------------Table Content Start------------- */
+.tbl_content {
+  padding: 2rem;
+  background-color: var(--new23);
+  margin: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.tbl_content h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--new18);
+}
+
+.tbl_tr_content {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1fr 50% 30% 2fr;
+  align-items: center;
+  background-color: var(--new24);
+  color: var(--light);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.tbl_data {
+  overflow-y: auto;
+  height: 150px;
+}
+
+.tbl_tr_content button {
+  outline: none;
+  border: none;
+  color: var(--light);
+  padding: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--danger);
+}
+
+.tbl_content button:active {
+  transform: scale(0.98);
+}
+
+.tbl_tr_content button:first-child {
+  background-color: var(--danger);
+}
+/*-------------Table Content Close------------- */
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--new18);
+  max-height: 420px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px 3px #24004628;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+/*checkbox to switch from sign up to login*/
+#chk {
+  display: none;
+}
+
+/*Login*/
+.login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.login label {
+  margin: 25% 0 5%;
+}
+
+label {
+  color: #fff;
+  font-size: 1.7rem;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  background: #e0dede;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+.register {
+  background: var(--new23);
+  border-radius: 60% / 10%;
+  transform: translateY(5%);
+  transition: 0.8s ease-in-out;
+}
+
+.register label {
+  color: white;
+  transform: scale(0.6);
+}
+
+#chk:checked ~ .register {
+  transform: translateY(-60%);
+}
+
+#chk:checked ~ .register label {
+  transform: scale(1);
+  margin: 10% 0 5%;
+}
+
+#chk:checked ~ .login label {
+  transform: scale(0.6);
+  margin: 5% 0 5%;
+}
+
+/*Button*/
+.form button {
+  width: 85%;
+  height: 40px;
+  margin: 12px auto 10%;
+  color: #fff;
+  background: var(--green);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.form button:hover {
+  background-color: #6d44b8;
+}
+
+.loginDrawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background-color: var(--light-green);
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+}
+
+.loginDrawer.open {
+  right: 0;
+  height: 448px;
+  border-radius: 10px;
+}
+
+.login_btn {
+  right: 0;
+}
